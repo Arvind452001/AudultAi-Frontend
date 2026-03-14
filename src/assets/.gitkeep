@@ -1,0 +1,13 @@
+# Place your image assets here
+# Copy all images from the original adult-ai/img directory to this location
+
+# Directory structure should be:
+# src/assets/img/
+# ├── banner/
+# ├── bg/
+# ├── content/
+# ├── logos/
+# ├── avatars/
+# ├── blog/
+# ├── portfolio/
+# └── ... (other folders)
