@@ -22,6 +22,7 @@ import SalesListPage from './pages/SalesListPage'
 import SellProductPage from './pages/SellProductPage'
 
 import './styles/App.css'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
       <Route path="/create-project" element={<CreateProjectPage />} />
       <Route path="/sales-list" element={<SalesListPage />} />
       <Route path="/sell-product" element={<SellProductPage />} />
+       {/* 404 Page */}
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }

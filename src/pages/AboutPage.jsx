@@ -83,9 +83,9 @@ function AboutPage() {
                 <div className="about-us-section position-relative">
                   <div className="about-image one image-hover">
                     <img
-                      src="/img/about.jpg"
+                      src="../assets/img/banner/about.png"
                       alt="..."
-                      style={{ width: "100%" }}
+                      // style={{ width: "100%" }}
                     />
                   </div>
                 </div>

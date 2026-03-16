@@ -1,70 +1,107 @@
-import React, { useState, useEffect } from 'react'
-import bgImg from '../assets/img/bg/bg-07.jpg'
+import React, { useState, useEffect } from "react";
+import bgImg from "../assets/img/bg/bg-07.jpg";
 
 const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      text: "SSOBOX has revolutionized the way we manage our digital access. Their platform is user-friendly, secure, and has greatly improved our overall experience. We highly recommend SSOBOX to any business looking for a reliable and efficient solution.",
+      text: "SSOBOX has revolutionized the way we manage our digital access. Their platform is user-friendly and secure.",
       author: "Paul Smith",
-      avatar: "https://bootdey.com/img/Content/avatar/avatar2.png"
+      avatar: "https://bootdey.com/img/Content/avatar/avatar2.png",
     },
     {
       id: 2,
+      text: "Amazing platform for managing applications securely. Highly recommended for businesses.",
+      author: "Paul Smith",
+      avatar: "https://bootdey.com/img/Content/avatar/avatar2.png",
+    },
+    {
+      id: 3,
       text: "SSOBOX has revolutionized the way we manage our digital access. Their platform is user-friendly, secure, and has greatly improved our overall experience. We highly recommend SSOBOX to any business looking for a reliable and efficient solution.",
       author: "Paul Smith",
-      avatar: "https://bootdey.com/img/Content/avatar/avatar2.png"
-    }
-  ]
+      avatar: "https://bootdey.com/img/Content/avatar/avatar2.png",
+    },
+  ];
 
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [testimonials.length])
+    const slider = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(slider);
+  }, []);
 
   return (
-    <section 
-      className="bg-img cover-background primary-overlay parallax"
-      style={{ backgroundImage: `url(${bgImg})` }}
+    <section
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        position: "relative",
+        padding: "80px 0",
+      }}
     >
-      <div className="container">
-        <div className="row align-items-center mt-n1-9">
-          <div className="col-lg-12 mt-1-9 text-center">
-            <div className="pe-xl-1-9">
-              <div className="section-title mb-1-9 mb-md-6 text-center">
-                <span className="sm-title">Our Testimonials</span>
-                <h2 className="mb-0 h1 text-white">What Our Client Says?</h2>
-              </div>
-              <div className="owl-carousel owl-theme testimonial-carousel2">
-                <div key={currentTestimonial}>
-                  <p className="text-white mb-1-9 display-27 display-xl-26 opacity9">
-                    {testimonials[currentTestimonial].text}
-                  </p>
-                  <div className="align-items-center justify-content-center d-flex">
-                    <div className="flex-shrink-0 position-relative">
-                      <img 
-                        src={testimonials[currentTestimonial].avatar}
-                        className="border-radius-50"
-                        alt={testimonials[currentTestimonial].author}
-                        style={{ width: '50px', borderRadius: '50%' }}
-                      />
-                    </div>
-                    <div className="flex-grow-1 ms-3">
-                      <h4 className="text-white">{testimonials[currentTestimonial].author}</h4>
-                    </div>
-                  </div>
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(0,0,0,0.8)",
+        }}
+      />
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <div className="text-center mb-5">
+          <span className="sm-title text-white">Our Testimonials</span>
+          <h2 className="text-white">What Our Client Says?</h2>
+        </div>
+
+        {/* Slider */}
+        <div style={{ overflow: "hidden" }}>
+          <div
+            style={{
+              display: "flex",
+              transform: `translateX(-${index * 100}%)`,
+              transition: "transform 0.8s ease",
+            }}
+          >
+            {testimonials.map((item) => (
+              <div
+                key={item.id}
+                style={{
+                  minWidth: "100%",
+                  textAlign: "center",
+                  padding: "20px",
+                }}
+              >
+                <p className="text-white mb-4">{item.text}</p>
+
+                <img
+                  src={item.avatar}
+                  alt=""
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "50%",
+                    marginBottom: "10px",
+                  }}
+                />
+
+                <h5 className="text-white">{item.author}</h5>
+                <div class="d-flex justify-content-center align-items-center gap-3 fs-4">
+                  <i class="bi bi-arrow-left text-white"></i>
+                  <i class="bi bi-dot text-danger"></i>
+                  <i class="bi bi-arrow-right text-white"></i>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

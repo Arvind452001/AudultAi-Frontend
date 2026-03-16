@@ -1,65 +1,100 @@
-import React, { useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function OTPVerifyPage() {
-  const [otp, setOtp] = useState('')
-  const navigate = useNavigate()
-  const location = useLocation()
-  const phone = location.state?.phone || ''
+  const [otp, setOtp] = useState(["", "", "", ""]);
 
-  const handleOTPVerify = (e) => {
-    e.preventDefault()
-    if (otp.trim().length === 4) {
-      navigate('/dashboard')
-    } else {
-      alert('Please enter a 4-digit OTP')
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const phone = location.state?.phone || "";
+
+  const handleChange = (value, index) => {
+    if (!/^[0-9]?$/.test(value)) return;
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+
+    setOtp(newOtp);
+
+    // auto move next
+    if (value && index < 3) {
+      document.getElementById(`otp-${index + 1}`).focus();
     }
-  }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const finalOtp = otp.join("");
+
+    if (finalOtp.length === 4) {
+      navigate("/dashboard");
+    } else {
+      alert("Please enter 4 digit OTP");
+    }
+  };
 
   return (
     <div className="main-wrapper">
       <Header />
-      
+
       <section className="about-style-01 py-5">
         <div className="container">
+
           <div className="row justify-content-center">
+
             <div className="col-lg-6 col-xl-5 mt-1-9">
-              <div className="login-card">
-                <h4 className="mb-4 text-center">Verify OTP</h4>
-                <p className="text-center text-white mb-3">
-                  We've sent an OTP to {phone}
+
+              <form className="login-card" onSubmit={handleSubmit}>
+
+                <h4 className="text-center">Verify OTP</h4>
+
+                <p className="text-center text-white">
+                  Enter the 4 digit code sent to your phone {phone}
                 </p>
-                <form onSubmit={handleOTPVerify}>
-                  <div className="mb-3">
-                    <label className="form-label">Enter OTP</label>
+
+                {/* OTP INPUTS */}
+                <div className="otp-inputs">
+
+                  {otp.map((digit, index) => (
                     <input
-                      className="form-control"
-                      placeholder="0000"
+                      key={index}
+                      id={`otp-${index}`}
+                      className="otp-input"
                       type="text"
-                      maxLength="4"
-                      value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
-                      required
+                      maxLength="1"
+                      value={digit}
+                      onChange={(e) =>
+                        handleChange(e.target.value, index)
+                      }
                     />
-                  </div>
-                  <button className="btn btn-login mt-3 text-white" type="submit">
-                    Verify OTP
-                  </button>
-                </form>
-                <p className="text-center mt-4 text-white">
-                  Didn't receive OTP? <span style={{color: '#ff2c2c', cursor: 'pointer'}}>Resend</span>
-                </p>
-              </div>
+                  ))}
+
+                </div>
+
+                <button className="btn btn-verify text-white">
+                  Verify OTP
+                </button>
+
+                <div className="resend text-white">
+                  Didn't receive code? <span>Resend</span>
+                </div>
+
+              </form>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default OTPVerifyPage
+export default OTPVerifyPage;

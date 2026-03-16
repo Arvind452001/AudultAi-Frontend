@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SidebarInner from "../components/SidebarInner";
 
 function VideoAIPage() {
   const [prompt, setPrompt] = useState("");
@@ -55,81 +56,7 @@ function VideoAIPage() {
 
             {/* SIDEBAR */}
 
-            <div className="col-lg-3 mb-4">
-              <div className="dashboard-sidebar">
-
-                <ul className="list-unstyled dashboard-menu">
-
-                  <li>
-                    <a href="user-dashboard.html">
-                      <i className="fa fa-home"></i> Dashboard
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="textai.html">
-                      <i className="fa fa-comment"></i> Text AI
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="imageai.html">
-                      <i className="fa fa-image"></i> Image AI
-                    </a>
-                  </li>
-
-                  <li className="active">
-                    <a href="videoai.html">
-                      <i className="fa fa-video"></i> Video AI
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="audioai.html">
-                      <i className="fa fa-music"></i> Audio AI
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="spyai.html">
-                      <i className="fa fa-user-secret"></i> Spy AI
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="creators-tools.html">
-                      <i className="fa fa-tools"></i> Creators Tools
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="projects.html">
-                      <i className="fa fa-folder"></i> Projects
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="marketplace.html">
-                      <i className="fa fa-shopping-cart"></i> Marketplace
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-user"></i> Profile
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-cog"></i> Settings
-                    </a>
-                  </li>
-
-                </ul>
-
-              </div>
-            </div>
+            <SidebarInner />
 
             {/* MAIN CONTENT */}
 
