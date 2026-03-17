@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import bgImg from "../assets/img/banner/page-title.jpg";
 import SidebarInner from "../components/SidebarInner";
+import HeaderProfile from "../components/HeaderProfile";
 
 function CreatorsToolsPage() {
 
@@ -60,7 +60,10 @@ function CreatorsToolsPage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+
+     <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
       {/* PAGE TITLE */}
       <section
@@ -83,7 +86,7 @@ function CreatorsToolsPage() {
                   <li>
                     <Link to="/">Home</Link>
                   </li>
-                  <li>User Dashboard</li>
+                  <li>Creators Tools</li>
                 </ul>
 
               </div>

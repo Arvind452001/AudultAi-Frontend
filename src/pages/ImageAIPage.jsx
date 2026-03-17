@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import bgImg from "../assets/img/banner/page-title.jpg";
 import SidebarInner from "../components/SidebarInner";
+import HeaderProfile from "../components/HeaderProfile";
 
 function ImageAIPage() {
   const [prompt, setPrompt] = useState("");
@@ -24,7 +24,9 @@ function ImageAIPage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+      <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
       {/* PAGE TITLE */}
       <section
@@ -47,7 +49,7 @@ function ImageAIPage() {
                   <li>
                     <Link to="/">Home</Link>
                   </li>
-                  <li>User Dashboard</li>
+                  <li>Image Ai</li>
                 </ul>
               </div>
             </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import bgImg from "../assets/img/banner/page-title.jpg";
 import SidebarInner from "../components/SidebarInner";
+import HeaderProfile from "../components/HeaderProfile";
 
 function DashboardPage() {
   const stats = [
@@ -24,7 +24,11 @@ function DashboardPage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+
+      <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
+     
 
       {/* PAGE TITLE */}
       <section

@@ -1,3 +1,4 @@
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -8,7 +9,7 @@ function Testimonials() {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    speed: 700,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -16,150 +17,136 @@ function Testimonials() {
 
   return (
     <section
+      className="bg-img cover-background secondary-overlay parallax"
       style={{
-        background: "#000",
+        backgroundImage: "url('/img/bg/bg-07.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         padding: "120px 0",
-        textAlign: "center",
       }}
     >
       <div className="container">
-        <span class="sm-title">Our Testimonials</span>
-        <h2
-          style={{
-            color: "#fff",
-            fontWeight: "600",
-            marginBottom: "50px",
-          }}
-        >
-          What Our Client Says?
-        </h2>
+        <div className="row align-items-center mt-n1-9">
+          <div className="col-lg-12 mt-1-9 text-center">
+            <div className="pe-xl-1-9">
+              <div className="section-title mb-1-9 mb-md-6 text-center">
+                <span className="sm-title">Our Testimonials</span>
+                <h2 className="mb-0 h1 text-white">What Our Client Says?</h2>
+              </div>
 
-        <Slider {...settings}>
-          {/* testimonial 1 */}
+              {/* React Slick Slider */}
+              <Slider {...settings}>
+                {/* testimonial 1 */}
+                <div>
+                  <p className="text-white mb-4 opacity9">
+                    SSOBOX has revolutionized the way we manage our digital
+                    access. Their platform is user-friendly, secure, and has
+                    greatly improved our overall experience.
+                  </p>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            <p
-              style={{
-                color: "#d5d5d5",
-                maxWidth: "850px",
-                marginBottom: "40px",
-                fontSize: "18px",
-                lineHeight: "1.8",
-              }}
-            >
-              SSOBOX helped streamline our company systems and improve digital
-              security. Their services are reliable and extremely easy to
-              integrate into existing workflows.
-            </p>
+                  <div className="d-flex flex-column align-items-center">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                      alt="user"
+                      style={{
+                        width: "60px",
+                        borderRadius: "50%",
+                        marginBottom: "10px",
+                      }}
+                    />
 
-            <img
-              src="https://bootdey.com/img/Content/avatar/avatar2.png"
-              alt="user"
-              style={{
-                width: "60px",
-                borderRadius: "50%",
-                margin: "0 auto 10px",
-                display: "block",
-              }}
-            />
+                    <h4 className="text-white">Paul Smith</h4>
+                     <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "10px",
+                      }}
+                    >
+                      <span>
+                        <i
+                          className="bi bi-arrow-left"
+                          style={{ color: "white", fontSize: "40px" }}
+                        ></i>
+                      </span>
 
-            <h5 style={{ color: "#fff" }}>Paul Smith</h5>
+                      <span
+                        style={{
+                          width: "10px",
+                          height: "10px",
+                          background: "red",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                        }}
+                      ></span>
+
+                      <span>
+                        <i
+                          className="bi bi-arrow-right"
+                          style={{ color: "white", fontSize: "40px" }}
+                        ></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* testimonial 2 */}
+                <div>
+                  <p className="text-white mb-4 opacity9">
+                    SSOBOX provides reliable and secure services that make
+                    digital access simple and efficient for our organization.
+                  </p>
+
+                  <div className="d-flex flex-column align-items-center">
+                    <img
+                      src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                      alt="user"
+                      style={{
+                        width: "60px",
+                        borderRadius: "50%",
+                        marginBottom: "10px",
+                      }}
+                    />
+
+                    <h4 className="text-white">Paul Smith</h4>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "10px",
+                      }}
+                    >
+                      <span>
+                        <i
+                          className="bi bi-arrow-left"
+                          style={{ color: "white", fontSize: "40px" }}
+                        ></i>
+                      </span>
+
+                      <span
+                        style={{
+                          width: "10px",
+                          height: "10px",
+                          background: "red",
+                          borderRadius: "50%",
+                          display: "inline-block",
+                        }}
+                      ></span>
+
+                      <span>
+                        <i
+                          className="bi bi-arrow-right"
+                          style={{ color: "white", fontSize: "40px" }}
+                        ></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Slider>
+            </div>
           </div>
-
-          {/* testimonial 2 */}
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            <p
-              style={{
-                color: "#d5d5d5",
-                maxWidth: "850px",
-                marginBottom: "40px",
-                fontSize: "18px",
-                lineHeight: "1.8",
-              }}
-            >
-              SSOBOX is known for its professional and reliable services. Our
-              team of experts is dedicated to delivering high-quality solutions
-              that meet the needs of our clients. With our extensive experience
-              and expertise, you can trust us to provide you with the best
-              software as a service (SAAS) solution..
-            </p>
-
-            <img
-              src="https://bootdey.com/img/Content/avatar/avatar2.png"
-              alt="user"
-              style={{
-                width: "60px",
-                borderRadius: "50%",
-                margin: "0 auto 10px",
-                display: "block",
-              }}
-            />
-
-            <h5 style={{ color: "#fff" }}>Paul Smith</h5>
-          </div>
-        </Slider>
-          <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "25px",
-            marginTop: "40px",
-          }}
-        >
-          <button
-            onClick={() => sliderRef.current.slickPrev()}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#fff",
-              fontSize: "60px",
-              cursor: "pointer",
-            }}
-          >
-          <i className="bi bi-arrow-left-short"></i>
-          </button>
-
-          <div
-            style={{
-              width: "8px",
-              height: "8px",
-              background: "#ff0000",
-              borderRadius: "50%",
-            }}
-          ></div>
-
-          <button
-            onClick={() => sliderRef.current.slickNext()}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#fff",
-              fontSize: "60px",
-              cursor: "pointer",
-            }}
-          >
-            <i class="bi bi-arrow-right-short"></i>
-          </button>
         </div>
       </div>
     </section>

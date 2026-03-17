@@ -1,42 +1,47 @@
 import React from "react";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
  import {Link} from "react-router-dom";
 import SidebarInner from "../components/SidebarInner";
+import HeaderProfile from "../components/HeaderProfile";
+ import bgImg from "../assets/img/banner/page-title.jpg";
 
 function MarketplacePage() {
   return (
     <div className="main-wrapper">
-      <Header />
+       <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
-      {/* PAGE TITLE */}
-      <section
-        className="page-title-section top-position1 bg-img cover-background secondary-overlay"
-        data-overlay-dark="7"
-        data-background="img/banner/page-title.jpg"
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="text-center">
-                <div className="position-relative">
-                  <h4>User Dashboard</h4>
-                </div>
-                <ul>
-                 
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard">User Dashboard</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* PAGE TITLE */}
+           <section
+             className="page-title-section top-position1 bg-img cover-background secondary-overlay"
+               style={{
+                       backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${bgImg})`,
+                       backgroundSize: "cover",
+                       backgroundPosition: "center",
+                     }}
+           >
+             <div className="container">
+               <div className="row">
+                 <div className="col-md-12">
+                   <div className="text-center">
+                     <div className="position-relative">
+                       <h4>User Dashboard</h4>
+                     </div>
+     
+                     <ul>
+                       <li>
+                         <Link to="/">Home</Link>
+                       </li>
+                       <li>Marketplace</li>
+                     </ul>
+     
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </section>
 
       {/* DASHBOARD */}
       <section className="py-5">

@@ -90,10 +90,10 @@ const Testimonials = () => {
                 />
 
                 <h5 className="text-white">{item.author}</h5>
-                <div class="d-flex justify-content-center align-items-center gap-3 fs-4">
-                  <i class="bi bi-arrow-left text-white"></i>
-                  <i class="bi bi-dot text-danger"></i>
-                  <i class="bi bi-arrow-right text-white"></i>
+                <div className="d-flex justify-content-center align-items-center gap-3 fs-4">
+                  <i className="bi bi-arrow-left text-white"></i>
+                  <i className="bi bi-dot text-danger"></i>
+                  <i className="bi bi-arrow-right text-white"></i>
                 </div>
               </div>
             ))}

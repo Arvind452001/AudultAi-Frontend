@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SidebarInner from "../components/SidebarInner";
-
+import HeaderProfile from "../components/HeaderProfile";
+   import bgImg from "../assets/img/banner/page-title.jpg";
 function SellProductPage() {
   const navigate = useNavigate();
 
@@ -44,7 +44,9 @@ function SellProductPage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+      <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
       {/* PAGE TITLE */}
       <section className="page-title-section top-position1 bg-img cover-background secondary-overlay">
@@ -53,14 +55,14 @@ function SellProductPage() {
             <div className="col-md-12">
 
               <div className="text-center">
-                <h4>User Dashboard</h4>
+                <h4>Sell AI Product</h4>
 
                 <ul>
                   <li>
                     <Link to="/">Home</Link>
                   </li>
 
-                  <li>User Dashboard</li>
+                  <li>Sell AI Product</li>
                 </ul>
               </div>
 

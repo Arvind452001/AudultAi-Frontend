@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SidebarInner from "../components/SidebarInner";
+import HeaderProfile from "../components/HeaderProfile";
+import bgImg from "../assets/img/banner/page-title.jpg";
+import { Link } from "react-router-dom";
 
 function VideoAIPage() {
   const [prompt, setPrompt] = useState("");
@@ -20,33 +22,38 @@ function VideoAIPage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+       <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
-      {/* PAGE TITLE */}
-
-      <section className="page-title-section top-position1 bg-img cover-background secondary-overlay">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="text-center">
-                <div className="position-relative">
-                  <h4>User Dashboard</h4>
-                </div>
-
-                <ul>
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="#!">User Dashboard</a>
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        {/* PAGE TITLE */}
+         <section
+               className="page-title-section top-position1 bg-img cover-background secondary-overlay"
+               style={{
+                 backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(${bgImg})`,
+                 backgroundSize: "cover",
+                 backgroundPosition: "center",
+               }}
+             >
+               <div className="container">
+                 <div className="row">
+                   <div className="col-md-12">
+                     <div className="text-center">
+                       <div className="position-relative">
+                         <h4>Video AI</h4>
+                       </div>
+       
+                       <ul>
+                         <li>
+                           <Link to="/">Home</Link>
+                         </li>
+                         <li>Video AI</li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </section>
 
       {/* DASHBOARD */}
 

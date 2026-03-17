@@ -1,25 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SidebarInner from "../components/SidebarInner";
-
+import HeaderProfile from "../components/HeaderProfile";
+   import bgImg from "../assets/img/banner/page-title.jpg";
 function SalesListPage() {
   return (
     <div className="main-wrapper">
-      <Header />
+       <div style={{ position: "relative", zIndex: 9999 }}>
+         <HeaderProfile />
+      </div>
 
       {/* PAGE TITLE */}
       <section
-        class="page-title-section top-position1 bg-img cover-background secondary-overlay"
+        className="page-title-section top-position1 bg-img cover-background secondary-overlay"
         data-overlay-dark="7"
         data-background="img/banner/page-title.jpg"
       >
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="text-center">
-                <div class="position-relative">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="text-center">
+                <div className="position-relative">
                   <h4>User Dashboard</h4>
                 </div>
                 <ul>
@@ -37,74 +39,74 @@ function SalesListPage() {
       </section>
 
       {/* <!-- DASHBOARD --> */}
-      <section class="py-5">
-        <div class="container">
-          <div class="row">
+      <section className="py-5">
+        <div className="container">
+          <div className="row">
             {/* <!-- SIDEBAR --> */}
            <SidebarInner/>
 
             {/* <!-- MAIN CONTENT --> */}
-            <div class="col-lg-9">
-              <div class="d-flex justify-content-between align-items-center mb-3 border-bottom">
-                <h4 class="text-white mb-4">Sales Overview</h4>
-                <Link to="/marketplace" class="btn btn-primary text-white mb-4">
+            <div className="col-lg-9">
+              <div className="d-flex justify-content-between align-items-center mb-3 border-bottom">
+                <h4 className="text-white mb-4">Sales Overview</h4>
+                <Link to="/marketplace" className="btn btn-primary text-white mb-4">
                   {" "}
-                  <i class="fa fa-arrow-left"></i> Back{" "}
+                  <i className="fa fa-arrow-left"></i> Back{" "}
                 </Link>
               </div>
 
-              <div class="row g-3 mb-4">
-                <div class="col-lg-3 col-md-6">
-                  <div class="stat-card">
-                    <div class="stat-icon text-danger">
-                      <i class="fa fa-dollar-sign"></i>
+              <div className="row g-3 mb-4">
+                <div className="col-lg-3 col-md-6">
+                  <div className="stat-card">
+                    <div className="stat-icon text-danger">
+                      <i className="fa fa-dollar-sign"></i>
                     </div>
                     <div>
-                      <div class="text-white small">Total Revenue</div>
+                      <div className="text-white small">Total Revenue</div>
                       <h5>$2,450</h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="stat-card">
-                    <div class="stat-icon text-warning">
-                      <i class="fa fa-shopping-cart"></i>
+                <div className="col-lg-3 col-md-6">
+                  <div className="stat-card">
+                    <div className="stat-icon text-warning">
+                      <i className="fa fa-shopping-cart"></i>
                     </div>
                     <div>
-                      <div class="text-white small">Total Orders</div>
+                      <div className="text-white small">Total Orders</div>
                       <h5>142</h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="stat-card">
-                    <div class="stat-icon text-info">
-                      <i class="fa fa-box"></i>
+                <div className="col-lg-3 col-md-6">
+                  <div className="stat-card">
+                    <div className="stat-icon text-info">
+                      <i className="fa fa-box"></i>
                     </div>
                     <div>
-                      <div class="text-white small">Products Sold</div>
+                      <div className="text-white small">Products Sold</div>
                       <h5>98</h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                  <div class="stat-card">
-                    <div class="stat-icon text-success">
-                      <i class="fa fa-clock"></i>
+                <div className="col-lg-3 col-md-6">
+                  <div className="stat-card">
+                    <div className="stat-icon text-success">
+                      <i className="fa fa-clock"></i>
                     </div>
                     <div>
-                      <div class="text-white small">Pending</div>
+                      <div className="text-white small">Pending</div>
                       <h5>$230</h5>
                     </div>
                   </div>
                 </div>
               </div>
               {/* <!-- SALES TABLE --> */}
-              <div class="card bg-light-dark sales border-0">
-                <div class="card-body">
-                  <h5 class="mb-3">Recent Sales</h5>
-                  <div class="table-responsive">
-                    <table class="table">
+              <div className="card bg-light-dark sales border-0">
+                <div className="card-body">
+                  <h5 className="mb-3">Recent Sales</h5>
+                  <div className="table-responsive">
+                    <table className="table">
                       <thead>
                         <tr>
                           <th>Buyer</th>
@@ -118,9 +120,9 @@ function SalesListPage() {
                       <tbody>
                         <tr>
                           <td>
-                            <div class="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2">
                               <img
-                                class="avatar"
+                                className="avatar"
                                 src="https://i.pravatar.cc/100?img=1"
                               />{" "}
                               Alex Carter
@@ -130,15 +132,15 @@ function SalesListPage() {
                           <td>$5</td>
                           <td>$4.5</td>
                           <td>
-                            <span class="badge badge-paid">Paid</span>
+                            <span className="badge badge-paid">Paid</span>
                           </td>
                           <td>2 May</td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2">
                               <img
-                                class="avatar"
+                                className="avatar"
                                 src="https://i.pravatar.cc/100?img=2"
                               />{" "}
                               John Miller
@@ -148,15 +150,15 @@ function SalesListPage() {
                           <td>$9</td>
                           <td>$8.1</td>
                           <td>
-                            <span class="badge badge-paid">Paid</span>
+                            <span className="badge badge-paid">Paid</span>
                           </td>
                           <td>2 May</td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2">
                               <img
-                                class="avatar"
+                                className="avatar"
                                 src="https://i.pravatar.cc/100?img=3"
                               />{" "}
                               Sophia Lee
@@ -166,15 +168,15 @@ function SalesListPage() {
                           <td>$7</td>
                           <td>$6.3</td>
                           <td>
-                            <span class="badge badge-pending">Pending</span>
+                            <span className="badge badge-pending">Pending</span>
                           </td>
                           <td>1 May</td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2">
                               <img
-                                class="avatar"
+                                className="avatar"
                                 src="https://i.pravatar.cc/100?img=4"
                               />{" "}
                               Michael Ross
@@ -184,15 +186,15 @@ function SalesListPage() {
                           <td>$12</td>
                           <td>$10.8</td>
                           <td>
-                            <span class="badge badge-paid">Paid</span>
+                            <span className="badge badge-paid">Paid</span>
                           </td>
                           <td>1 May</td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="d-flex align-items-center gap-2">
+                            <div className="d-flex align-items-center gap-2">
                               <img
-                                class="avatar"
+                                className="avatar"
                                 src="https://i.pravatar.cc/100?img=5"
                               />{" "}
                               Emma Wilson
@@ -202,7 +204,7 @@ function SalesListPage() {
                           <td>$6</td>
                           <td>$5.4</td>
                           <td>
-                            <span class="badge badge-paid">Paid</span>
+                            <span className="badge badge-paid">Paid</span>
                           </td>
                           <td>30 Apr</td>
                         </tr>

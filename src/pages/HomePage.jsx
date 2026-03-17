@@ -100,7 +100,10 @@ function HomePage() {
 
   return (
     <div className="main-wrapper">
-      <Header />
+       {/* HEADER */}
+      <div style={{ position: "relative", zIndex: 9999 }}>
+        <Header />
+      </div>
       <Banner />
       <Features />
       <About />
