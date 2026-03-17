@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/img/logos/logo.png";
 const HeaderSearch = () => {
 
   const [searchOpen, setSearchOpen] = useState(false);
@@ -109,18 +109,18 @@ const HeaderSearch = () => {
         }}
       >
 
-        {/* LOGO */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div
-            style={{
-              width: "34px",
-              height: "34px",
-              background: "red",
-              borderRadius: "50%"
-            }}
-          />
-          <h2 style={{ margin: 0 }}>XynthraAI</h2>
-        </div>
+       {/* LOGO */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  height: "",
+                }}
+              >
+                <img src={logo} alt="" />
+                {/* <h2 style={{ margin: 0, fontWeight: "700" }}>XynthraAI</h2> */}
+              </div>
 
         {/* DESKTOP NAV */}
         {!isMobile && (
@@ -134,7 +134,7 @@ const HeaderSearch = () => {
           >
             <Link to="/" style={navLink}>HOME</Link>
             <Link to="/about" style={navLink}>ABOUT US</Link>
-            <Link to="/blogs" style={navLink}>BLOGS</Link>
+            {/* <Link to="/blogs" style={navLink}>BLOGS</Link> */}
             <Link to="/contact" style={navLink}>CONTACT US</Link>
           </div>
         )}
@@ -200,7 +200,7 @@ const HeaderSearch = () => {
 >
   <Link to="/" style={mobileItem} onClick={()=>setMenuOpen(false)}>HOME</Link>
   <Link to="/about" style={mobileItem} onClick={()=>setMenuOpen(false)}>ABOUT US</Link>
-  <Link to="/blogs" style={mobileItem} onClick={()=>setMenuOpen(false)}>BLOGS</Link>
+  {/* <Link to="/blogs" style={mobileItem} onClick={()=>setMenuOpen(false)}>BLOGS</Link> */}
   <Link to="/contact" style={mobileItem} onClick={()=>setMenuOpen(false)}>CONTACT US</Link>
 </div>
 

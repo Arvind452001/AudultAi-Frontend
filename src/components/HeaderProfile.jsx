@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import bgImg from "../assets/img/logos/logo.png";
+import logo from "../assets/img/logos/logo.png";
 
 const HeaderProfile = () => {
   const [profileOpen, setProfileOpen] = useState(false);
@@ -70,9 +70,15 @@ const HeaderProfile = () => {
         }}
       >
         {/* LOGO */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", height:"" }}>
-         
-<img src={bgImg} alt="" />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            height: "",
+          }}
+        >
+          <img src={logo} alt="" />
           {/* <h2 style={{ margin: 0, fontWeight: "700" }}>XynthraAI</h2> */}
         </div>
 
@@ -108,7 +114,7 @@ const HeaderProfile = () => {
               ABOUT US
             </Link>
 
-            <Link
+            {/* <Link
               to="/blogs"
               style={{
                 cursor: "pointer",
@@ -117,7 +123,7 @@ const HeaderProfile = () => {
               }}
             >
               BLOGS
-            </Link>
+            </Link> */}
 
             <Link
               to="/contact"
@@ -217,48 +223,68 @@ const HeaderProfile = () => {
       </div>
 
       {/* MOBILE NAVIGATION */}
- 
-{menuOpen && isMobile && (
-  <div
-    style={{
-      background: "#fff",
-      color: "#000",
-      borderTop: "1px solid #ccc",
-    }}
-  >
-    <Link
-      to="/"
-      style={{ ...mobileItem, textDecoration: "none", color: "#000", display: "block" }}
-      onClick={() => setMenuOpen(false)}
-    >
-      HOME
-    </Link>
 
-    <Link
-      to="/about"
-      style={{ ...mobileItem, textDecoration: "none", color: "#000", display: "block" }}
-      onClick={() => setMenuOpen(false)}
-    >
-      ABOUT US
-    </Link>
+      {menuOpen && isMobile && (
+        <div
+          style={{
+            background: "#fff",
+            color: "#000",
+            borderTop: "1px solid #ccc",
+          }}
+        >
+          <Link
+            to="/"
+            style={{
+              ...mobileItem,
+              textDecoration: "none",
+              color: "#000",
+              display: "block",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            HOME
+          </Link>
 
-    <Link
-      to="/blogs"
-      style={{ ...mobileItem, textDecoration: "none", color: "#000", display: "block" }}
-      onClick={() => setMenuOpen(false)}
-    >
-      BLOGS
-    </Link>
+          <Link
+            to="/about"
+            style={{
+              ...mobileItem,
+              textDecoration: "none",
+              color: "#000",
+              display: "block",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            ABOUT US
+          </Link>
 
-    <Link
-      to="/contact"
-      style={{ ...mobileItem, textDecoration: "none", color: "#000", display: "block" }}
-      onClick={() => setMenuOpen(false)}
-    >
-      CONTACT US
-    </Link>
-  </div>
-)}
+          <Link
+            to="/blogs"
+            style={{
+              ...mobileItem,
+              textDecoration: "none",
+              color: "#000",
+              display: "block",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            BLOGS
+          </Link>
+
+          <Link
+            to="/contact"
+            style={{
+              ...mobileItem,
+              textDecoration: "none",
+              color: "#000",
+              display: "block",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            CONTACT US
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
